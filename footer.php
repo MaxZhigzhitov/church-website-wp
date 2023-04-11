@@ -26,7 +26,7 @@
           <?php
                   $args = array(
                     'theme_location'  => 'Footer',
-                    'menu'            => 'Footer',
+                    'menu'            => 'menu_full',
                     'container'       => '',
                     'container_class' => '',
                     'container_id'    => '',
@@ -92,7 +92,9 @@
       </div>
 
       <div class="footer__copyright">
-        © Свято-Троицкий приход г.Улан-Батор. Все права защищены
+        <?php if(ot_get_option('copyright_text')) : ?>
+          <?php echo ot_get_option('copyright_text'); ?>
+        <?php endif; ?>
       </div>
     </footer>
 </div><!-- #page -->

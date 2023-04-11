@@ -26,38 +26,29 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h2 class="comments-title title">
 			<?php
 			$parish_comment_count = get_comments_number();
-			if ( '1' === $parish_comment_count ) {
 				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'parish' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $parish_comment_count, 'comments title', 'parish' ) ),
+					esc_html( 'Комментарии', 'parish'  ),
 					number_format_i18n( $parish_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
-			}
 			?>
 		</h2><!-- .comments-title -->
 
-		<?php the_comments_navigation(); ?>
-
-		<ol class="comment-list">
+		<ul class="comment-list">
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
+					'style'      => 'ul',
 					'short_ping' => true,
+					'avatar_size'=> 64,
+					'per_page'	 => 20,
 				)
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php
 		the_comments_navigation();
@@ -71,7 +62,15 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	comment_form(
+		array(
+			'title_reply_before'	=> '<h3 id="reply-title" class="comment-reply-title">',
+			'title_reply_after'		=> '</h3>',
+			'logged_in_as'			=> '',
+			'comment_field'			=> '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+			'must_log_in'			=> '<p class="must-log-in">' .  sprintf( __( 'You must be logged in to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>'
+		)
+	);
 	?>
 
 </div><!-- #comments -->

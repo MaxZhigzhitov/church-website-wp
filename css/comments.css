@@ -1,0 +1,179 @@
+/*Comment Output*/
+.comment-list {
+    margin-bottom: 50px;
+}
+ 
+.comment-list .reply {}
+.comment-list .reply a {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85em;
+    font-weight: bold;
+    background-color: cadetblue;
+    color: white;
+    padding: 0.75em;
+    border-radius: 999px;
+}
+.comment-list article {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #b4b4b4;
+    box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.085);
+}
+ 
+.comment-list .alt {}
+.comment-list .odd {}
+.comment-list .even {
+}
+.comment-list .thread-alt {}
+.comment-list .thread-odd {}
+.comment-list .thread-even {}
+.comment-list .thread-even > article {}
+.comment-list li ul.children .alt {}
+.comment-list li ul.children .odd {}
+.comment-list li ul.children .even {}
+ 
+.comment-list .vcard {
+    display: flex;
+    align-items: center;
+    font-size: 1.15em;
+    margin-bottom: 1em;
+}
+.comment-list .vcard cite.fn {}
+.comment-list .vcard span.says {}
+.comment-list .vcard img.photo {
+}
+.comment-list .vcard img.avatar {
+    border-radius: 999px;
+    margin-right: 0.5em;
+}
+.comment-list .vcard cite.fn a.url {}
+
+.comment-list .comment-meta {
+    font-family: Arial, Helvetica, sans-serif;
+} 
+.comment-list .comment-meta a {}
+.comment-list .comment-metadata {
+    color: #b6b6b6;
+    font-size: 0.75em;
+    padding-left: 0.5em;
+    margin-bottom: 0.75em;
+    width: fit-content;
+    position: relative;
+}
+.comment-list .comment-metadata::before{
+    content: '';
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    left: 0;
+    background-color: darkred;
+}
+.comment-list .comment-metadata a {}
+ 
+.comment-list .parent {}
+.comment-list .comment-content {
+    margin-bottom: 1.2em;
+}
+.comment-list .children {}
+.comment-list .pingback {}
+.comment-list .bypostauthor {}
+.comment-list .comment-author {}
+.comment-list .comment-author-admin {}
+ 
+.comment-list {}
+.comment-list li {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.comment-list li p {}
+.comment-list li ul {}
+.comment-list li ul.children li {}
+.comment-list li ul.children li.alt {}
+.comment-list li ul.children li.byuser {}
+.comment-list li ul.children li.comment {}
+.comment-list li ul.children li {
+    position: relative;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.comment-list li ul.children li::before {
+    background-color: #b4b4b4;
+    content: '';
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    left: 0px;
+}
+.comment-list li ul.children li.depth-2 {margin-left: 40px;}
+.comment-list li ul.children li.depth-3 {margin-left: 65px;}
+.comment-list li ul.children li.depth-4 {margin-left: 80px;}
+.comment-list li ul.children li.depth-5 {margin-left: 95px;}
+.comment-list li ul.children li.bypostauthor {}
+.comment-list li ul.children li.comment-author-admin {}
+ 
+#cancel-comment-reply {}
+#cancel-comment-reply a {}
+
+
+/* Respond Output */
+
+#respond { }
+#respond .must-log-in {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#reply-title {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+}
+#cancel-comment-reply-link {
+    display: block;
+    font-weight: normal;
+    font-size: 0.85em;
+}
+#commentform { }
+#author { }
+#email { }
+#url { }
+#comment{
+    width: 100%;
+    padding: 0.75em;
+    font-family: inherit;
+    border-radius: 8px;
+    border: 1px solid #b4b4b4;
+    box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.085);
+}
+#submit{
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85em;
+    font-weight: bold;
+    background-color: cadetblue;
+    border: none;
+    color: white;
+    padding: 0.75em;
+    border-radius: 999px;
+    cursor: pointer;
+}
+.comment-notes { }
+.required { }
+.comment-form-author { }
+.comment-form-email { }
+.comment-form-url { }
+.comment-form-comment { }
+.comment-form-comment label {
+    /* display: none; */
+}
+.comment-form-cookies-consent { }
+.form-allowed-tags { }
+.form-submit{}
+
+.comment-navigation{
+
+}
+.comment-navigation .nav-links{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85em;
+    margin-bottom: 0.75em;
+}

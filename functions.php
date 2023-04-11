@@ -52,10 +52,10 @@ function parish_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'main' 		=> esc_html__( 'Main', 'parish' ),
-			'side'	 	=> esc_html__( 'Sidenav', 'parish' ),
-			'footer' 	=> esc_html__( 'Footer', 'parish' ),
-			'top' 		=> esc_html__( 'Top', 'parish'),
+			'main' 			   => esc_html__( 'Main', 'parish' ),
+			'footer' 		   => esc_html__( 'Footer', 'parish' ),
+			'short' 		   => esc_html__( 'Short', 'parish'),
+			'parish_info_menu' => esc_html__( 'Parish-Menu', 'parish' ),
 		)
 		
 	);
@@ -74,6 +74,7 @@ function parish_setup() {
 			'caption',
 			'style',
 			'script',
+			'title-tag',
 		)
 	);
 
@@ -153,6 +154,7 @@ function parish_styles(){
 	wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
 	wp_enqueue_style( 'parish-style', get_stylesheet_uri(), array('reset') );
 	wp_enqueue_style( 'calend-style', get_template_directory_uri() . '/css/calend.css');
+	wp_enqueue_style( 'comment-style', get_template_directory_uri() . '/css/comments.css');
 }
 add_action( 'wp_enqueue_scripts', 'parish_styles');
  
@@ -162,6 +164,7 @@ function parish_scripts() {
 	wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '', true);
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.min.js', array('jquery'), '', true);
 	wp_enqueue_script( 'parish-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script ( 'vk-community', "https://vk.com/js/api/openapi.js?169");
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -196,14 +199,16 @@ add_action( 'wp_enqueue_scripts', 'parish_scripts' );
 // 	require get_template_directory() . '/inc/jetpack.php';
 // }
 
-
 function parish_filter_current_item_menu_header( $classes ){
-	if(in_array('current-page-item', $classes)){
+	if(in_array('current-menu-item', $classes)){
 		$classes[] = 'menu-item-active';
 	}
+
+	return $classes;
 }
 
-add_filter( 'nav_menu_css_class', 'parish_filter_current_item_menu_header' );
+add_filter( 'nav_menu_css_class', 'parish_filter_current_item_menu_header');
+
 
 // Обрезка отрывков описаний записей (постов)
 

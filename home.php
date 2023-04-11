@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: home
+Template Name: Home
 */
 
 ?>
@@ -11,28 +11,27 @@ Template Name: home
 <?php $parish_schedule_image = get_post_meta($post -> ID, 'parish_schedule_image', true); ?>
 <?php $parish_school = get_post_meta($post -> ID, 'parish_school_link', true); ?>
 <?php $parish_school_image = get_post_meta($post -> ID, 'parish_school_image', true); ?>
+<?php $home_intro = get_post_meta( $post -> ID, 'intro_list_item', true); ?>
 
 <section class="intro section__spacing-large" id="intro">
       <div class="container">
         <div class="intro__inner">
-		  <?php
-		  	$home_intro = get_post_meta( $post -> ID, 'intro_list_item', true);
-		  ?>
+		  
 
 		  <?php
 		  	foreach( $home_intro as $intro_item ) :
 		  ?>
 		  
           <div class="intro__menu-item">
-            <a href="<?php echo $intro_item[intro_item_link] ?>">
+            <a href="<?php echo $intro_item['intro_item_link'] ?>">
               <img
                 class="box-shadow"
-                src="<?php echo $intro_item[intro_item_thumbnail] ?>"
+                src="<?php echo $intro_item['intro_item_thumbnail'] ?>"
                 alt=""
               />
             </a>
-            <a href="<?php echo $intro_item[intro_item_link] ?>">
-              <h3 class="title"><?php echo $intro_item[intro_item_title] ?></h3>
+            <a href="<?php echo $intro_item['intro_item_link'] ?>">
+              <h3 class="title"><?php echo $intro_item['intro_item_title'] ?></h3>
             </a>
           </div>
 
@@ -45,9 +44,9 @@ Template Name: home
 
     <section class="parish" id="parish">
       <div class="section-banner section__margin-bottom">
-	  <?php $parish_meta_banner = get_post_meta($post -> ID, 'parish_banner_upload', true) ?>;
-	  <?php $parish_meta_title = get_post_meta($post -> ID, 'parish_section_title', true) ?>;
-	  <?php $parish_meta_description = get_post_meta($post -> ID, 'parish_description', true) ?>;
+	  <?php $parish_meta_banner = get_post_meta($post -> ID, 'parish_banner_upload', true) ?>
+	  <?php $parish_meta_title = get_post_meta($post -> ID, 'parish_section_title', true) ?>
+	  <?php $parish_meta_description = get_post_meta($post -> ID, 'parish_description', true) ?>
 	  <?php $parish_slider = get_post_meta($post -> ID, 'parish_slider', true); ?>
 	  
         <div class="image-wrapper">
@@ -70,7 +69,7 @@ Template Name: home
 				?>
                   <div class="parish__image-item swiper-slide">
                     <div class="slider-image">
-                      <img src="<?php echo $slider_item[parish_slider_image] ?>" alt="" />
+                      <img src="<?php echo $slider_item['parish_slider_image'] ?>" alt="" />
                     </div>
                   </div>
                   
@@ -87,7 +86,29 @@ Template Name: home
 				  <?php echo $parish_meta_description ?>
                   </p>
                 </div>
-                <ul class="parish__info-navigation list__margin ver">
+                <?php
+                  $args = array(
+                    'theme_location'  => 'Parish-Menu',
+                    'menu'            => 'parish_menu',
+                    'container'       => '',
+                    'container_class' => '',
+                    'container_id'    => '',
+                    'menu_class'      => 'parish__info-navigation list__margin ver',
+                    'menu_id'         => '',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu',
+                    'before'          => '',
+                    'after'           => '',
+                    'link_before'     => '',
+                    'link_after'      => '',
+                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'depth'           => 0,
+                    'walker'          => '',
+                  );
+                  
+                  wp_nav_menu( $args );
+                ?>
+                <!-- <ul class="parish__info-navigation list__margin ver">
                   <li>
                     <a href="#">Расписание служб</a>
                   </li>
@@ -97,7 +118,7 @@ Template Name: home
                   <li>
                     <a href="#">Воскресная школа</a>
                   </li>
-                </ul>
+                </ul> -->
               </div>
             </div>
 
@@ -138,8 +159,8 @@ Template Name: home
                     </h3>
                   </a>
                   <div>
-                    <div><i class="fa-solid fa-clock"></i><?php the_date(); ?></div>
-                    <div><i class="fa-solid fa-user"></i><?php the_author(); ?></div>
+                    <div><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></div>
+                    <div><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></div>
                   </div>
                   <div class="textbox">
                     <p>
@@ -251,10 +272,10 @@ Template Name: home
                 <li class="faq__item">
                   <ul>
                     <li class="faq__question">
-                      <?php echo $faq_item[faq_q]; ?>
+                      <?php echo $faq_item['faq_q']; ?>
                     </li>
                     <li class="faq__answer">
-                      <?php echo $faq_item[faq_a]; ?>
+                      <?php echo $faq_item['faq_a']; ?>
                     </li>
                   </ul>
                 </li>

@@ -147,6 +147,14 @@ function custom_theme_options() {
 				'type'         => 'upload',
 				'section'      => 'footer',
 			),
+			array(
+				'id'           => 'copyright_text',
+				'label'        => 'Текст копирайта',
+				'desc'         => 'Добавьте текст копирайта в подвал страницы',
+				'std'          => 'Все права защищены',
+				'type'         => 'text',
+				'section'      => 'footer',
+			),
 
 			/* Home Page Options */
 
