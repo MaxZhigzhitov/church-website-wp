@@ -162,6 +162,9 @@
 .comment-form-email { }
 .comment-form-url { }
 .comment-form-comment { }
+.comment-form-comment textarea{
+    resize: vertical;
+}
 .comment-form-comment label {
     /* display: none; */
 }

@@ -7,6 +7,7 @@ Template Name: Главная
 
 <?php get_header(); ?>
 
+<!-- Почему эти переменные работают, если поставить их в начале кода? -->
 <?php $parish_schedule = get_post_meta($post -> ID, 'parish_schedule_link', true); ?>
 <?php $parish_schedule_image = get_post_meta($post -> ID, 'parish_schedule_image', true); ?>
 <?php $parish_school = get_post_meta($post -> ID, 'parish_school_link', true); ?>
@@ -16,11 +17,7 @@ Template Name: Главная
 <section class="intro section__spacing-large" id="intro">
     <div class="container">
         <div class="intro__inner">
-
-
-            <?php
-		  	foreach( $home_intro as $intro_item ) :
-		  ?>
+            <?php foreach( $home_intro as $intro_item ) : ?>
 
             <div class="intro__menu-item">
                 <a href="<?php echo $intro_item['intro_item_link'] ?>">
@@ -31,25 +28,23 @@ Template Name: Главная
                 </a>
             </div>
 
-            <?php
-		  	endforeach;
-		  ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
 
 <section class="parish" id="parish">
     <div class="section-banner section__margin-bottom">
-        <?php $parish_meta_banner = get_post_meta($post -> ID, 'parish_banner_upload', true) ?>
-        <?php $parish_meta_title = get_post_meta($post -> ID, 'parish_section_title', true) ?>
-        <?php $parish_meta_description = get_post_meta($post -> ID, 'parish_description', true) ?>
+        <?php $parish_meta_banner = get_post_meta($post -> ID, 'parish_banner_upload', true); ?>
+        <?php $parish_meta_title = get_post_meta($post -> ID, 'parish_section_title', true); ?>
+        <?php $parish_meta_description = get_post_meta($post -> ID, 'parish_description', true); ?>
         <?php $parish_slider = get_post_meta($post -> ID, 'parish_slider', true); ?>
 
         <div class="image-wrapper">
-            <img src="<?php echo $parish_meta_banner ?>" alt="" />
+            <img src="<?php echo $parish_meta_banner; ?>" alt="" />
         </div>
         <div class="container">
-            <h2 class="title title--section"><?php echo $parish_meta_title ?></h2>
+            <h2 class="title title--section"><?php echo $parish_meta_title; ?></h2>
         </div>
     </div>
 
@@ -60,18 +55,14 @@ Template Name: Главная
                     <div class="parish__slider-container swiper">
                         <div class="parish__slider-wrapper swiper-wrapper">
 
-                            <?php
-				    foreach( $parish_slider as $slider_item ) :
-				?>
+                            <?php foreach( $parish_slider as $slider_item ) : ?>
                             <div class="parish__image-item swiper-slide">
                                 <div class="slider-image">
-                                    <img src="<?php echo $slider_item['parish_slider_image'] ?>" alt="" />
+                                    <img src="<?php echo $slider_item['parish_slider_image']; ?>" alt="" />
                                 </div>
                             </div>
 
-                            <?php
-					endforeach;
-				?>
+                            <?php endforeach; ?>
                         </div>
 
                         <div class="swiper-pagination"></div>
@@ -83,64 +74,50 @@ Template Name: Главная
                             </p>
                         </div>
                         <?php
-                  $args = array(
-                    'theme_location'  => 'Parish-Menu',
-                    'menu'            => 'parish_menu',
-                    'container'       => '',
-                    'container_class' => '',
-                    'container_id'    => '',
-                    'menu_class'      => 'parish__info-navigation list__margin ver',
-                    'menu_id'         => '',
-                    'echo'            => true,
-                    'fallback_cb'     => 'wp_page_menu',
-                    'before'          => '',
-                    'after'           => '',
-                    'link_before'     => '',
-                    'link_after'      => '',
-                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                    'depth'           => 0,
-                    'walker'          => '',
-                  );
-                  
-                  wp_nav_menu( $args );
-                ?>
-                        <!-- <ul class="parish__info-navigation list__margin ver">
-                  <li>
-                    <a href="#">Расписание служб</a>
-                  </li>
-                  <li>
-                    <a href="#">К новостям</a>
-                  </li>
-                  <li>
-                    <a href="#">Воскресная школа</a>
-                  </li>
-                </ul> -->
+                            $args = array(
+                                'theme_location'  => 'Parish-Menu',
+                                'menu'            => 'parish_menu',
+                                'container'       => '',
+                                'container_class' => '',
+                                'container_id'    => '',
+                                'menu_class'      => 'parish__info-navigation list__margin ver',
+                                'menu_id'         => '',
+                                'echo'            => true,
+                                'fallback_cb'     => 'wp_page_menu',
+                                'before'          => '',
+                                'after'           => '',
+                                'link_before'     => '',
+                                'link_after'      => '',
+                                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'depth'           => 0,
+                                'walker'          => '',
+                            );
+                            
+                            wp_nav_menu( $args );
+                        ?>
                     </div>
                 </div>
 
-
-
                 <section class="news section__margin-bottom" id="news">
-
                     <?php
-                    global $post;
+                        global $post;
 
-                    $myPostLatest = get_posts([
-                      'numberposts' => 1,
-                      'category'    => 0,
-                    ]);
-                    
-                    $myPosts = get_posts([ 
-                      'offset'      => 1,
-                      'numberposts' => 5,
-                      'category'    => 0,
-                    ]);
-            ?>
+                        $myPostLatest = get_posts([
+                            'numberposts' => 1,
+                            'category'    => 0,
+                        ]);
+                        
+                        $myPosts = get_posts([ 
+                            'offset'      => 1,
+                            'numberposts' => 5,
+                            'category'    => 0,
+                        ]);
+                    ?>
 
-                    <?php if($myPostLatest) {
-                foreach( $myPostLatest as $post ){
-                  setup_postdata($post);
-              ?>
+                    <?php if($myPostLatest) :
+                        foreach( $myPostLatest as $post ) :
+                        setup_postdata($post);
+                    ?>
 
                     <div class="news__feed-item highlight box-shadow content-item-underlay">
                         <a href="<?php the_permalink(); ?>">
@@ -167,34 +144,33 @@ Template Name: Главная
                         </div>
                     </div>
 
-                    <?php }}?>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
 
                     <div class="flex-split flex-reverse">
                         <div class="news__side-nav">
                             <div class="link-wrapper box-shadow"
-                                style="background-image: url(<?php echo $parish_schedule_image ?>)">
+                                style="background-image: url(<?php echo $parish_schedule_image; ?>)">
                                 <div class="textbox">
-                                    <a href="<?php echo $parish_schedule ?>">
+                                    <a href="<?php echo $parish_schedule; ?>">
                                         Расписание служб
                                     </a>
                                 </div>
                             </div>
-                            <div class="link-wrapper box-shadow" style="
-                      background-image: url(<?php echo $parish_school_image ?>)
-                    ">
+                            <div class="link-wrapper box-shadow"
+                                style="background-image: url(<?php echo $parish_school_image; ?>)">
                                 <div class="textbox">
-                                    <a href="<?php echo $parish_school ?>">Воскресная школа</a>
+                                    <a href="<?php echo $parish_school; ?>">Воскресная школа</a>
                                 </div>
                             </div>
                         </div>
                         <div class="news__feed">
                             <ul>
-
                                 <?php
-                    if( $myPosts ){
-                      foreach( $myPosts as $post ){
-                      setup_postdata($post);
-                    ?>
+                                    if( $myPosts ) :
+                                        foreach( $myPosts as $post ) :
+                                            setup_postdata($post);
+                                ?>
                                 <!-- News item -->
                                 <li class="news__feed-item box-shadow content-item-underlay">
                                     <div class="link-wrapper">
@@ -223,9 +199,9 @@ Template Name: Главная
 
                                 <!-- News item End-->
 
-
-
-                                <?php }} wp_reset_postdata();?>
+                                <?php endforeach; ?>
+                                <?php endif; ?>
+                                <?php wp_reset_postdata();?>
 
                             </ul>
                         </div>
@@ -256,7 +232,7 @@ Template Name: Главная
                     <h2 class="title title--section">Вопросы и ответы</h2>
                     <ul class="faq__wrapper">
 
-                        <?php $faq_item = get_post_meta($post -> ID, 'faq_item', true) ?>
+                        <?php $faq_item = get_post_meta($post -> ID, 'faq_item', true); ?>
                         <?php foreach($faq_item as $faq_item) : ?>
 
                         <li class="faq__item">
@@ -276,7 +252,7 @@ Template Name: Главная
                     <div class="textbox">
                         <p class="title">Вы сможете задать свой вопрос по электронной почте:</p>
                         <a
-                            href="mailto:<?php echo ot_get_option('contacts_email') ?>"><?php echo ot_get_option('contacts_email') ?></a>
+                            href="mailto:<?php echo ot_get_option('contacts_email'); ?>"><?php echo ot_get_option('contacts_email'); ?></a>
                     </div>
                 </section>
             </div>
@@ -287,8 +263,4 @@ Template Name: Главная
     </div>
 </section>
 
-<?php
-
-get_footer();
-
-?>
+<?php get_footer(); ?>

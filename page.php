@@ -26,8 +26,4 @@
           <?php get_sidebar(); ?>
   </section>
 
-<?php
-
-get_footer();
-
-?>
+<?php get_footer(); ?>
