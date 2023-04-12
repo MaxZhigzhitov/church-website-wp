@@ -6,7 +6,7 @@
  *
  * @package holy-trinity-parish-website
  * 
- * Template Name: Parish
+ * Template Name: Новости прихода
  */
 
 get_header();
@@ -33,17 +33,26 @@ get_header();
 							?>
 
                             <li class="news__feed-item box-shadow content-item-underlay">
+                                <?php if(has_post_thumbnail()) : ?>
                                 <div class="link-wrapper">
                                     <a href="<?php the_permalink(); ?>">
                                         <?php the_post_thumbnail(array( 150, 150)); ?>
                                     </a>
                                 </div>
+                                <?php endif; ?>
                                 <div class="news__feed-descr">
                                     <a href="<?php the_permalink(); ?>">
                                         <h3 class="title">
                                             <?php the_title(); ?>
                                         </h3>
                                     </a>
+                                    <div class="single-post-meta">
+                                        <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
+                                        <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
+                                        <div class="single-post-cat">
+                                            Рубрика: <?php the_category(', '); ?>
+                                        </div>
+                                    </div>
                                     <div class="textbox">
                                         <p>
                                             <?php the_excerpt(); ?>

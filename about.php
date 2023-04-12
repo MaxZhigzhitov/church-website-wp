@@ -1,21 +1,17 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * Шаблон страницы с вводной информацией рубрики сайта
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package holy-trinity-parish-website
  * 
- * Template Name: About
+ * Template Name: Интро-страница
  */
-
-get_header();
 ?>
+
+<?php get_header(); ?>
+
 
 <main id="primary" class="site-main">
 
@@ -30,10 +26,10 @@ get_header();
     <section class="basics section__margin-bottom" id="basics">
         <div class="section-banner section__margin-bottom">
             <div class="image-wrapper">
-                <img src="<?php the_field('basics-banner'); ?>" alt="" />
+                <img src="<?php the_field( 'basics-banner' ); ?>" alt="" />
             </div>
             <div class="container">
-                <h2 class="title title--section"><?php the_field('basics-title'); ?></h2>
+                <h2 class="title title--section"><?php the_field( 'basics-title' ); ?></h2>
             </div>
         </div>
 
@@ -42,39 +38,46 @@ get_header();
                 <div class="basics__content">
                     <div class="news__feed">
                         <ul>
-
                             <?php
 								$post;
-
 								$basicsPosts = get_posts([
-									'numberposts' => -1,
+									'numberposts' => 5,
 									'category'	  => 14,
 								]);
 							?>
 
-                            <?php if($basicsPosts) {
-								foreach($basicsPosts as $post) {
+                            <?php if($basicsPosts) :
+								foreach($basicsPosts as $post) :
 									setup_postdata($post);
 							?>
 
                             <li class="news__feed-item box-shadow content-item-underlay">
                                 <div class="link-wrapper">
-                                    <a href="#">
+                                    <a href="<?php the_permalink(); ?>">
                                         <?php the_post_thumbnail(array( 150, 150 )); ?>
                                     </a>
                                 </div>
                                 <div class="news__feed-descr">
-                                    <h3 class="title">
-                                        <?php the_title(); ?>
-                                    </h3>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <h3 class="title">
+                                            <?php the_title(); ?>
+                                        </h3>
+                                    </a>
+                                    <div class="single-post-meta">
+                                        <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
+                                        <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
+                                        <div class="single-post-cat">
+                                            Рубрика: <?php the_category(', '); ?>
+                                        </div>
+                                    </div>
                                     <div class="textbox">
                                         <?php the_excerpt(); ?>
                                     </div>
                                 </div>
                             </li>
 
-                            <?php }} wp_reset_postdata(); ?>
-
+                            <?php endforeach;   wp_reset_postdata(); ?>
+                            <?php endif; ?>
                         </ul>
                     </div>
 
@@ -82,9 +85,7 @@ get_header();
                         <a class="cta-button" href="<?php the_field('basics-button-link'); ?>">Читать далее</a>
                     </div>
                 </div>
-
                 <?php get_sidebar(); ?>
-
             </div>
         </div>
     </section>

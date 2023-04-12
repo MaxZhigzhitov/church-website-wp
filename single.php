@@ -8,29 +8,36 @@
  */
 
 ?>
-	
-	<?php get_header(); ?>
 
-	<main id="primary" class="site-main">
+<?php get_header(); ?>
 
-	<section class="single section__spacing">
-      <div class="container">
-        <div class="single__inner aside-split">
-          <div class="single__content">
-            <div class="single__post section__margin-bottom content-item-underlay box-shadow">
-			<?php if(has_post_thumbnail()) : ?>
-				<div class="single__post-thumbnail section__margin-bottom"> <?php the_post_thumbnail(); ?> </div>
-			<?php endif; ?>
-				<h1 class="title"><?php the_title(); ?></h1>
+<main id="primary" class="site-main">
 
-				<?php while(have_posts()) : the_post() ?>
-					<div><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?> <i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></div>
-				<?php endwhile; wp_reset_query(); ?>
-				
-				<?php the_content(); ?>
-            </div>
+    <section class="single section__spacing">
+        <div class="container">
+            <div class="single__inner aside-split">
+                <div class="single__content">
+                    <div class="single__post section__margin-bottom content-item-underlay box-shadow">
+                        <?php if(has_post_thumbnail()) : ?>
+                        <div class="single__post-thumbnail section__margin-bottom"> <?php the_post_thumbnail(); ?>
+                        </div>
+                        <?php endif; ?>
+                        <h1 class="title"><?php the_title(); ?></h1>
 
-			<?php
+                        <?php while(have_posts()) : the_post() ?>
+                        <div class="single-post-meta">
+                            <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
+                            <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
+                            <div class="single-post-cat">
+                                Рубрика: <?php the_category(', '); ?>
+                            </div>
+                        </div>
+                        <?php endwhile; wp_reset_query(); ?>
+
+                        <?php the_content(); ?>
+                    </div>
+
+                    <?php
 				while ( have_posts() ) :
 					the_post();
 
@@ -51,18 +58,18 @@
 				endwhile; // End of the loop.
 			?>
 
-            
 
-		</div>
-		<?php get_sidebar(); ?>
-      </div>
+
+                </div>
+                <?php get_sidebar(); ?>
+            </div>
     </section>
 
 
-	
-		
 
-	</main><!-- #main -->
+
+
+</main><!-- #main -->
 
 <?php
 
