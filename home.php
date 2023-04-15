@@ -133,7 +133,7 @@ Template Name: Главная
                                 <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
                                 <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
                                 <div class="single-post-cat">
-                                    Рубрика: <?php the_category(', '); ?>
+                                    <?php _e('Рубрика:', 'parish'); ?> <?php the_category(', '); ?>
                                 </div>
                             </div>
                             <div class="textbox">
@@ -153,7 +153,7 @@ Template Name: Главная
                                 style="background-image: url(<?php echo $parish_schedule_image; ?>)">
                                 <div class="textbox">
                                     <a href="<?php echo $parish_schedule; ?>">
-                                        Расписание служб
+                                        Service schedule
                                     </a>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@ Template Name: Главная
                                 <li class="news__feed-item box-shadow content-item-underlay">
                                     <div class="link-wrapper">
                                         <a href="<?php the_permalink(); ?>">
-                                            <?php the_post_thumbnail( array( 150,150 ) ); ?>
+                                            <?php the_post_thumbnail( 'thumbnail' ); ?>
                                         </a>
                                     </div>
                                     <div class="news__feed-descr">

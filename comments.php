@@ -31,7 +31,7 @@
         <?php
 			$parish_comment_count = get_comments_number();
 				printf(
-					esc_html( 'Комментарии', 'parish'  ),
+					_e( 'Комментарии', 'parish'  ),
 					number_format_i18n( $parish_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);

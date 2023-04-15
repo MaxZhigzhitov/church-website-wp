@@ -20,9 +20,11 @@
                     <div class="single__post section__margin-bottom content-item-underlay box-shadow">
 
                         <?php if(has_post_thumbnail()) : ?>
-
+                        
+                        <?php if(get_field('post-settings-post-image-show')) : ?>
                         <div class="single__post-thumbnail section__margin-bottom"> <?php the_post_thumbnail(); ?></div>
-
+                        <?php endif; ?>
+                        
                         <?php endif; ?>
 
                         <h1 class="title"><?php the_title(); ?></h1>

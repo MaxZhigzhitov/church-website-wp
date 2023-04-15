@@ -113,6 +113,13 @@ function parish_setup() {
 }
 add_action( 'after_setup_theme', 'parish_setup' );
 
+
+add_action( 'after_setup_theme', 'my_theme_setup');
+function my_theme_setup(){
+	load_theme_textdomain( 'parish', get_template_directory() . '/languages' );
+}
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
