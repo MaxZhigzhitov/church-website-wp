@@ -82,10 +82,20 @@
                     </div>
 
                     <div class="cta-wrapper cta-centered">
-                        <a class="cta-button" href="<?php the_field('basics-button-link'); ?>">Читать далее</a>
+                        <a class="cta-button" href="<?php the_field('basics-button-link'); ?>"><?php _e( 'Читать далее', 'parish' ) ?></a>
                     </div>
                 </div>
-                <?php get_sidebar(); ?>
+                <?php
+                    if(ICL_LANGUAGE_CODE == 'ru') { 
+                        get_sidebar('ru');
+                    } elseif(ICL_LANGUAGE_CODE == 'mn') {
+                        get_sidebar('mn');
+                        
+                    } else {
+                        get_sidebar('en');
+                    }
+
+                ?>
             </div>
         </div>
     </section>
@@ -107,6 +117,5 @@
 </main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
 ?>

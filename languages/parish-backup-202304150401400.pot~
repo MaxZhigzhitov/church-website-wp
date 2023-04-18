@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: parish-website\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2023-04-18 05:01+0000\n"
+"POT-Creation-Date: 2023-04-15 03:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: maxzhi\n"
@@ -237,16 +237,4 @@ msgid "Г. Улан-Батор, Баянзурх дистрикт, остано�
 msgstr ""
 
 msgid "Контакты"
-msgstr ""
-
-msgid "Расписание служб"
-msgstr ""
-
-msgid "Читать далее"
-msgstr ""
-
-msgid "Войти"
-msgstr ""
-
-msgid "Зарегистрироваться"
 msgstr ""

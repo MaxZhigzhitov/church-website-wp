@@ -7,11 +7,13 @@
  * @package holy-trinity-parish-website
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area sidebar">
-	<div class="sidebar-sticky"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
+	<div class="sidebar-sticky">
+		<?php dynamic_sidebar( 'sidebar' ); ?>
+	</div>
 </aside><!-- #secondary -->

@@ -22,7 +22,7 @@
 
     <div class="footer__nav-block">
         <div>
-            <div class="title">Меню</div>
+            <div class="title"><?php _e('Меню', 'parish'); ?></div>
             <?php
 				$args = array(
 					'theme_location'  => 'Footer',
@@ -47,12 +47,12 @@
         </div>
 
         <div>
-            <div class="title">Контакты</div>
+            <div class="title"><?php _e('Контакты', 'parish'); ?></div>
             <ul class="list__margin ver">
                 <?php if(ot_get_option('contacts_address')) : ?>
                 <li class="footer__nav-item footer__address">
                     <i class="fa-solid fa-location-dot fa-2x"></i>
-                    <?php echo ot_get_option('contacts_address') ?>
+                    <?php _e(ot_get_option('contacts_address'), 'parish') ?>
                 </li>
                 <?php endif; ?>
                 <?php if(ot_get_option('contacts_phone')) : ?>

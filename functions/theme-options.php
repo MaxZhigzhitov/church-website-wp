@@ -104,6 +104,13 @@ function custom_theme_options() {
 			),
 
 			array(
+				'id'           => 'contacts_address_en',
+				'label'        => 'Ваш адрес',
+				'type'         => 'text',
+				'section'      => 'contacts',
+			),
+
+			array(
 				'id'           => 'contacts_phone',
 				'label'        => 'Ваш телефон',
 				'type'         => 'text',

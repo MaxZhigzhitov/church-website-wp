@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: parish-website\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
 "POT-Creation-Date: 2023-04-14 13:05+0800\n"
-"PO-Revision-Date: 2023-04-14 06:07+0000\n"
+"PO-Revision-Date: 2023-04-15 03:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (United States)\n"
 "MIME-Version: 1.0\n"
@@ -209,5 +209,26 @@ msgstr ""
 msgid "View your shopping cart"
 msgstr ""
 
+msgid "Вопросы и ответы"
+msgstr "Questions & Answers"
+
+msgid "Воскресная школа"
+msgstr "Sunday School"
+
+msgid "Вы сможете задать свой вопрос по электронной почте:"
+msgstr "You can ask your question via E-mail:"
+
+msgid "Меню"
+msgstr "Menu"
+
+msgid "Наш адрес"
+msgstr "Address"
+
+msgid "Последние новости"
+msgstr "Latest News"
+
 msgid "Рубрика:"
-msgstr "The Category"
+msgstr "The Category:"
+
+msgid "Телефон"
+msgstr "Phone"

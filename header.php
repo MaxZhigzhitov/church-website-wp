@@ -22,6 +22,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
     <?php $page_title = $wp_query->post->post_title; ?>
     <?php wp_body_open(); ?>
     <div id="page" class="site">
@@ -84,7 +85,7 @@
                         <!-- Боковая навигационная панель -->
                         <div class="header__sidenav content-item-underlay box-shadow">
                             <nav class="header__sidenav-menu list__margin ver">
-                                <div class="header__sidenav-title title">Меню</div>
+                                <div class="header__sidenav-title title"><?php _e( 'Меню', 'parish'); ?></div>
                                 <?php
                                     $args = array(
                                         'theme_location'  => 'Main',
@@ -110,6 +111,7 @@
                                 ?>
 
                             </nav>
+                            
                             <div class="header__socials">
                                 <?php if(ot_get_option('socials_facebook')) : ?>
                                 <div class="link-wrapper">
@@ -132,17 +134,18 @@
                                 <?php endif; ?>
                             </div>
                             <div class="header__contacts">
+                                
                                 <?php if(ot_get_option('contacts_address')) : ?>
                                 <div class="header__contacts-item">
-                                    <div class="header__contacts-title title">Наш адрес</div>
+                                    <div class="header__contacts-title title"><?php _e( 'Наш адрес', 'parish'); ?></div>
                                     <div class="header__contacts-descr">
-                                        <?php echo ot_get_option('contacts_address') ?>
+                                        <?php _e(ot_get_option('contacts_address'), 'parish') ?>
                                     </div>
                                 </div>
                                 <?php endif; ?>
                                 <?php if(ot_get_option('contacts_phone')) : ?>
                                 <div class="header__contacts-item">
-                                    <div class="header__contacts-title title">Телефон</div>
+                                    <div class="header__contacts-title title"><?php _e( 'Телефон', 'parish'); ?></div>
                                     <div class="header__contacts-descr">
                                         <a
                                             href="tel:<?php echo str_replace(array('-', '(', ')', ' '), '', ot_get_option('contacts_phone')) ?>">

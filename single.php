@@ -20,11 +20,11 @@
                     <div class="single__post section__margin-bottom content-item-underlay box-shadow">
 
                         <?php if(has_post_thumbnail()) : ?>
-                        
+
                         <?php if(get_field('post-settings-post-image-show')) : ?>
                         <div class="single__post-thumbnail section__margin-bottom"> <?php the_post_thumbnail(); ?></div>
                         <?php endif; ?>
-                        
+
                         <?php endif; ?>
 
                         <h1 class="title"><?php the_title(); ?></h1>
@@ -33,7 +33,7 @@
                             <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
                             <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
                             <div class="single-post-cat">
-                                Рубрика: <?php the_category(', '); ?>
+                                <?php _e('Рубрика:', 'parish'); ?> <?php the_category(', '); ?>
                             </div>
                         </div>
                         <?php endwhile; wp_reset_query(); ?>
@@ -54,7 +54,17 @@
                         endwhile; // End of the loop.
                     ?>
                 </div>
-                <?php get_sidebar(); ?>
+                <?php
+                    if(ICL_LANGUAGE_CODE == 'ru') { 
+                        get_sidebar('ru');
+                    } elseif(ICL_LANGUAGE_CODE == 'mn') {
+                        get_sidebar('mn');
+                        
+                    } else {
+                        get_sidebar('en');
+                    }
+
+                ?>
             </div>
     </section>
 </main><!-- #main -->

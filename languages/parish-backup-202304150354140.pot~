@@ -5,15 +5,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: parish-website\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2023-04-14 13:05+0800\n"
+"POT-Creation-Date: 2023-04-15 03:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: maxzhi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
 
 #. Theme Name of the theme
 msgid "_s"
@@ -24,7 +26,11 @@ msgid "https://underscores.me/"
 msgstr ""
 
 #. Description of the theme
-msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
+msgid ""
+"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
+"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
+"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
+"theme out there. That's what I'm here for."
 msgstr ""
 
 #. Author of the theme
@@ -40,7 +46,9 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:22
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
 
 #: 404.php:31
@@ -176,15 +184,20 @@ msgstr ""
 
 #. translators: 1: link to WP admin new post page.
 #: template-parts/content-none.php:24
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:37
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:44
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #: template-parts/content-page.php:25 template-parts/content.php:53
@@ -194,4 +207,31 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #: template-parts/content.php:40
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+msgid "Рубрика:"
+msgstr ""
+
+msgid "Последние новости"
+msgstr ""
+
+msgid "Воскресная школа"
+msgstr ""
+
+msgid "Вопросы и ответы"
+msgstr ""
+
+msgid "Вы сможете задать свой вопрос по электронной почте:"
+msgstr ""
+
+msgid "Меню"
+msgstr ""
+
+msgid "Наш адрес"
+msgstr ""
+
+msgid "Телефон"
+msgstr ""
+
+msgid "Г. Улан-Батор, Баянзурх дистрикт, остановка Монгол Кино"
 msgstr ""

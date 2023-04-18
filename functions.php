@@ -141,8 +141,31 @@ function parish_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => 'Боковая панель',
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'parish' ),
+			'id'            => 'sidebar',
+			'description'   => esc_html__( 'Добавьте свои виджеты здесь', 'parish' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => 'Side Panel',
+			'id'            => 'sidebar-en',
+			'description'   => esc_html__( 'Add widgets here', 'parish' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => 'Хажуугийн самбар',
+			'id'            => 'sidebar-mn',
+			'description'   => esc_html__( 'Энд виджет нэмэх', 'parish' ),
 			'before_widget' => '',
 			'after_widget'  => '',
 			'before_title'  => '<h2 class="widget-title">',

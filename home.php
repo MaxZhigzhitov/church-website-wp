@@ -160,7 +160,7 @@ Template Name: Главная
                             <div class="link-wrapper box-shadow"
                                 style="background-image: url(<?php echo $parish_school_image; ?>)">
                                 <div class="textbox">
-                                    <a href="<?php echo $parish_school; ?>">Воскресная школа</a>
+                                    <a href="<?php echo $parish_school; ?>"><?php _e('Воскресная школа', 'parish'); ?></a>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +188,7 @@ Template Name: Главная
                                             <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
                                             <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
                                             <div class="single-post-cat">
-                                                Рубрика: <?php the_category(', '); ?>
+                                            <?php _e('Рубрика:', 'parish'); ?> <?php the_category(', '); ?>
                                             </div>
                                         </div>
                                         <div class="textbox">
@@ -207,7 +207,8 @@ Template Name: Главная
                         </div>
                     </div>
                 </section>
-                <section class="calend section__margin-bottom" id="calend">
+                <?php if(ICL_LANGUAGE_CODE == 'ru') : ?>
+                    <section class="calend section__margin-bottom" id="calend">
                     <div class="calend-container">
                         <div class="azbyka-saints"></div>
                         <script>
@@ -228,8 +229,10 @@ Template Name: Главная
                         </script>
                     </div>
                 </section>
+                <?php endif; ?>
+                
                 <section class="faq section__margin-bottom" id="faq">
-                    <h2 class="title title--section">Вопросы и ответы</h2>
+                    <h2 class="title title--section"><?php _e( 'Вопросы и ответы', 'parish' ); ?></h2>
                     <ul class="faq__wrapper">
 
                         <?php $faq_item = get_post_meta($post -> ID, 'faq_item', true); ?>
@@ -250,14 +253,25 @@ Template Name: Главная
 
                     </ul>
                     <div class="textbox">
-                        <p class="title">Вы сможете задать свой вопрос по электронной почте:</p>
+                        <p class="title"><?php _e( 'Вы сможете задать свой вопрос по электронной почте:', 'parish' ); ?></p>
                         <a
                             href="mailto:<?php echo ot_get_option('contacts_email'); ?>"><?php echo ot_get_option('contacts_email'); ?></a>
                     </div>
                 </section>
             </div>
 
-            <?php get_sidebar(); ?>
+            <?php
+            if(ICL_LANGUAGE_CODE == 'ru') { 
+			    get_sidebar('ru');
+            } elseif(ICL_LANGUAGE_CODE == 'mn') {
+                get_sidebar('mn');
+                
+            } else {
+                get_sidebar('en');
+            }
+
+            ?>
+            
 
         </div>
     </div>

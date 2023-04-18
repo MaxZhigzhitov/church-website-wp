@@ -1,22 +1,21 @@
 # Copyright (C) 2020 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: parish-website\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2023-04-14 13:05+0800\n"
-"PO-Revision-Date: 2023-04-14 05:59+0000\n"
-"Last-Translator: \n"
-"Language-Team: English (United States)\n"
+"POT-Creation-Date: 2023-04-15 04:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: maxzhi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
-"\n"
-"Language: en_US\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Loco-Version: 2.6.4; wp-6.1.1"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
 
 #. Theme Name of the theme
 msgid "_s"
@@ -208,4 +207,37 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #: template-parts/content.php:40
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+msgid "Рубрика:"
+msgstr ""
+
+msgid "Последние новости"
+msgstr ""
+
+msgid "Воскресная школа"
+msgstr ""
+
+msgid "Вопросы и ответы"
+msgstr ""
+
+msgid "Вы сможете задать свой вопрос по электронной почте:"
+msgstr ""
+
+msgid "Меню"
+msgstr ""
+
+msgid "Наш адрес"
+msgstr ""
+
+msgid "Телефон"
+msgstr ""
+
+msgid "Г. Улан-Батор, Баянзурх дистрикт, остановка Монгол Кино"
+msgstr ""
+
+msgid "Контакты"
+msgstr ""
+
+msgid "Расписание служб"
 msgstr ""

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: parish-website\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
 "POT-Creation-Date: 2023-04-14 13:05+0800\n"
-"PO-Revision-Date: 2023-04-18 05:02+0000\n"
+"PO-Revision-Date: 2023-04-18 04:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: English (United States)\n"
 "MIME-Version: 1.0\n"
@@ -209,9 +209,6 @@ msgstr ""
 msgid "View your shopping cart"
 msgstr ""
 
-msgid "Войти"
-msgstr "Sign In"
-
 msgid "Вопросы и ответы"
 msgstr "Questions & Answers"
 
@@ -223,9 +220,6 @@ msgstr "You can ask your question via E-mail:"
 
 msgid "Г. Улан-Батор, Баянзурх дистрикт, остановка Монгол Кино"
 msgstr "UlaanBaatar city, Bayanzurh district, Mongol Cinema station"
-
-msgid "Зарегистрироваться"
-msgstr "Sign Up"
 
 msgid "Контакты"
 msgstr "Contacts"

@@ -17,7 +17,7 @@
         <div class="container">
             <div class="archive__inner aside-split">
                 <div class="archive__content">
-                    <h2 class="title">Последние новости</h2>
+                    <h2 class="title"><?php _e('Последние новости', 'parish'); ?></h2>
 
                     <div class="news__feed">
                         <ul>
@@ -50,7 +50,7 @@
                                         <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
                                         <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
                                         <div class="single-post-cat">
-                                            Рубрика: <?php the_category(', '); ?>
+                                        <?php _e('Рубрика:', 'parish'); ?> <?php the_category(', '); ?>
                                         </div>
                                     </div>
                                     <div class="textbox">
@@ -68,8 +68,17 @@
                     </div>
                 </div>
 
-                <?php get_sidebar(); ?>
+                <?php
+                if(ICL_LANGUAGE_CODE == 'ru') { 
+                    get_sidebar('ru');
+                } elseif(ICL_LANGUAGE_CODE == 'mn') {
+                    get_sidebar('mn');
+                    
+                } else {
+                    get_sidebar('en');
+                }
 
+                ?>
             </div>
         </div>
     </section>
