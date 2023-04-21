@@ -84,6 +84,8 @@
 
                         <!-- Боковая навигационная панель -->
                         <div class="header__sidenav content-item-underlay box-shadow">
+                            <button class="header__close">&times;</button>
+
                             <nav class="header__sidenav-menu list__margin ver">
                                 <div class="header__sidenav-title title"><?php _e( 'Меню', 'parish'); ?></div>
                                 <?php
@@ -111,7 +113,7 @@
                                 ?>
 
                             </nav>
-                            
+
                             <div class="header__socials">
                                 <?php if(ot_get_option('socials_facebook')) : ?>
                                 <div class="link-wrapper">
@@ -134,7 +136,7 @@
                                 <?php endif; ?>
                             </div>
                             <div class="header__contacts">
-                                
+
                                 <?php if(ot_get_option('contacts_address')) : ?>
                                 <div class="header__contacts-item">
                                     <div class="header__contacts-title title"><?php _e( 'Наш адрес', 'parish'); ?></div>
