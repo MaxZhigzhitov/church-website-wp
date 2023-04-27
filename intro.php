@@ -67,7 +67,7 @@
                                         <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
                                         <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
                                         <div class="single-post-cat">
-                                            Рубрика: <?php the_category(', '); ?>
+                                            <?php _e('Рубрика:', 'parish'); ?> <?php the_category(', '); ?>
                                         </div>
                                     </div>
                                     <div class="textbox">

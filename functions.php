@@ -248,5 +248,31 @@ add_filter( 'excerpt_length', function(){
 
 add_filter( 'excerpt_more', function(){
 	return '...';
-})
+});
+
+//Редирект на страницу логина (нужен для перехода по кнопке комментировать, если пользователь еще не авторизован)
+
+add_filter( 'login_url', 'wp_kama_login_url_filter', 10, 3 );
+
+/**
+ * Function for `login_url` filter-hook.
+ * 
+ * @param string $login_url    The login URL. Not HTML-encoded.
+ * @param string $redirect     The path to redirect to on login, if supplied.
+ * @param bool   $force_reauth Whether to force reauthorization, even if a cookie is present.
+ *
+ * @return string
+ */
+function wp_kama_login_url_filter( $login_url ){
+
+	if(ICL_LANGUAGE_CODE == 'en'){
+		$login_url = "/login-en";
+	} else if (ICL_LANGUAGE_CODE == 'mn'){
+		$login_url = '/login-mn';
+	} else {
+		$login_url = '/login';
+	}
+
+	return $login_url;
+}
 ?>

@@ -1,4 +1,18 @@
+@font-face {
+    font-family: "Open Sans Regular";
+    src: url(../fonts/Open-Sans-Regular.ttf);
+}
+@font-face {
+    font-family: "Open Sans Bold";
+    src: url(../fonts/Open-Sans-Bold.ttf);
+}
+@font-face {
+    font-family: "Open Sans Light";
+    src: url(../fonts/Open-Sans-Light.ttf);
+}
+
 /*Comment Output*/
+
 .comment-list {
     margin-bottom: 50px;
 }
@@ -6,7 +20,7 @@
 .comment-list .reply {}
 .comment-list .reply a {
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans Bold";
     font-size: 0.85em;
     font-weight: bold;
     background-color: cadetblue;
@@ -50,7 +64,7 @@
 .comment-list .vcard cite.fn a.url {}
 
 .comment-list .comment-meta {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans Regular";
 } 
 .comment-list .comment-meta a {}
 .comment-list .comment-metadata {
@@ -84,7 +98,7 @@
 .comment-list {}
 .comment-list li {
     padding-top: 15px;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
 }
 .comment-list li p {}
 .comment-list li ul {}
@@ -95,21 +109,21 @@
 .comment-list li ul.children li {
     position: relative;
     padding-left: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    /* padding-top: 15px;
+    padding-bottom: 15px; */
 }
 .comment-list li ul.children li::before {
     background-color: #b4b4b4;
     content: '';
     height: 100%;
-    width: 2px;
+    width: 1px;
     position: absolute;
     left: 0px;
 }
-.comment-list li ul.children li.depth-2 {margin-left: 40px;}
-.comment-list li ul.children li.depth-3 {margin-left: 65px;}
-.comment-list li ul.children li.depth-4 {margin-left: 80px;}
-.comment-list li ul.children li.depth-5 {margin-left: 95px;}
+.comment-list li ul.children li.depth-2::before {}
+.comment-list li ul.children li.depth-3::before {background-color: #c36100;}
+.comment-list li ul.children li.depth-4::before {background-color: #a35405;}
+.comment-list li ul.children li.depth-5::before {background-color: #854608;}
 .comment-list li ul.children li.bypostauthor {}
 .comment-list li ul.children li.comment-author-admin {}
  
@@ -121,11 +135,17 @@
 
 #respond { }
 #respond .must-log-in {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans Regular";
 }
 #reply-title {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans Regular";
     color: #555;
+}
+.comment-reply-link{
+    font-family: "Open Sans Bold", sans-serif;
+}
+.comment-reply-login{
+    display: none;
 }
 #cancel-comment-reply-link {
     display: block;
@@ -146,7 +166,7 @@
 }
 #submit{
     display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans Regular";
     font-size: 0.85em;
     font-weight: bold;
     background-color: cadetblue;
@@ -176,7 +196,7 @@
 
 }
 .comment-navigation .nav-links{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Open Sans Regular";
     font-size: 0.85em;
     margin-bottom: 0.75em;
 }

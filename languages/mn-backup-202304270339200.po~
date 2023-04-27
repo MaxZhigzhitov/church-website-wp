@@ -1,21 +1,21 @@
 # Copyright (C) 2020 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: parish-website\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
 "POT-Creation-Date: 2023-04-23 13:19+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: maxzhi\n"
+"PO-Revision-Date: 2023-04-27 03:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: Mongolian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: _s\n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+"Language: mn\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.4; wp-6.1.1"
 
 #. Theme Name of the theme
 msgid "_s"
@@ -216,13 +216,13 @@ msgid "Последние новости"
 msgstr ""
 
 msgid "Воскресная школа"
-msgstr ""
+msgstr "Ням гарагийн сургууль"
 
 msgid "Вопросы и ответы"
-msgstr ""
+msgstr "Асуулт, хариулт"
 
 msgid "Вы сможете задать свой вопрос по электронной почте:"
-msgstr ""
+msgstr "Та асуултаа и-мэйлээр асууж болно:"
 
 msgid "Меню"
 msgstr ""
@@ -234,10 +234,10 @@ msgid "Телефон"
 msgstr ""
 
 msgid "Г. Улан-Батор, Баянзурх дистрикт, остановка Монгол Кино"
-msgstr ""
+msgstr "Улаанбаатар хот, Баянзурх дуураг, Монгол Кино Үйлдвэр зогсоол"
 
 msgid "Контакты"
-msgstr ""
+msgstr "Холбоо барих"
 
 msgid "Расписание служб"
 msgstr ""
@@ -246,10 +246,10 @@ msgid "Читать далее"
 msgstr ""
 
 msgid "Войти"
-msgstr ""
+msgstr "Нэвтрэх"
 
 msgid "Зарегистрироваться"
-msgstr ""
+msgstr "Бүртгүүлэх"
 
 msgid "Ой! Эта страница не может быть найдена!"
 msgstr ""

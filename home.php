@@ -153,14 +153,15 @@ Template Name: Главная
                                 style="background-image: url(<?php echo $parish_schedule_image; ?>)">
                                 <div class="textbox">
                                     <a href="<?php echo $parish_schedule; ?>">
-                                        Service schedule
+                                        <?php _e('Расписание служб', 'parish'); ?>
                                     </a>
                                 </div>
                             </div>
                             <div class="link-wrapper box-shadow"
                                 style="background-image: url(<?php echo $parish_school_image; ?>)">
                                 <div class="textbox">
-                                    <a href="<?php echo $parish_school; ?>"><?php _e('Воскресная школа', 'parish'); ?></a>
+                                    <a
+                                        href="<?php echo $parish_school; ?>"><?php _e('Воскресная школа', 'parish'); ?></a>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +189,7 @@ Template Name: Главная
                                             <span><i class="fa-solid fa-clock"></i><?php echo get_the_date(); ?></span>
                                             <span><i class="fa-solid fa-user"></i><?php echo get_the_author(); ?></span>
                                             <div class="single-post-cat">
-                                            <?php _e('Рубрика:', 'parish'); ?> <?php the_category(', '); ?>
+                                                <?php _e('Рубрика:', 'parish'); ?> <?php the_category(', '); ?>
                                             </div>
                                         </div>
                                         <div class="textbox">
@@ -207,8 +208,7 @@ Template Name: Главная
                         </div>
                     </div>
                 </section>
-                <?php if(ICL_LANGUAGE_CODE == 'ru') : ?>
-                    <section class="calend section__margin-bottom" id="calend">
+                <section class="calend section__margin-bottom" id="calend">
                     <div class="calend-container">
                         <div class="azbyka-saints"></div>
                         <script>
@@ -229,8 +229,7 @@ Template Name: Главная
                         </script>
                     </div>
                 </section>
-                <?php endif; ?>
-                
+
                 <section class="faq section__margin-bottom" id="faq">
                     <h2 class="title title--section"><?php _e( 'Вопросы и ответы', 'parish' ); ?></h2>
                     <ul class="faq__wrapper">
@@ -253,7 +252,8 @@ Template Name: Главная
 
                     </ul>
                     <div class="textbox">
-                        <p class="title"><?php _e( 'Вы сможете задать свой вопрос по электронной почте:', 'parish' ); ?></p>
+                        <p class="title"><?php _e( 'Вы сможете задать свой вопрос по электронной почте:', 'parish' ); ?>
+                        </p>
                         <a
                             href="mailto:<?php echo ot_get_option('contacts_email'); ?>"><?php echo ot_get_option('contacts_email'); ?></a>
                     </div>
@@ -271,7 +271,7 @@ Template Name: Главная
             }
 
             ?>
-            
+
 
         </div>
     </div>

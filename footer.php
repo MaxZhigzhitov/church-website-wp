@@ -30,7 +30,7 @@
 					'container'       => '',
 					'container_class' => '',
 					'container_id'    => '',
-					'menu_class'      => '',
+					'menu_class'      => 'list__margin ver',
 					'menu_id'         => '',
 					'echo'            => true,
 					'fallback_cb'     => 'wp_page_menu',
